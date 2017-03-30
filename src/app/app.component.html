@@ -1,20 +1,27 @@
 <header class="page-header">
   <div class="container">
-    <h1 class="logo">Imly!</h1>
+    <h1 class="logo">IM.RUN!</h1>
   </div>
 </header>
 <div class="container">
-  <form #form action="/trim" method="post" class="form">
-    <input type="url" required autofocus name="inputUrl" placeholder="e.g. https://twitter.com" id="input-url">
-    <button #submitUrl (click)="form.classList.toggle('loading');" type="submit" value="shorten" id="submit-url">Shorten</button>
+  <form #form action="/trim" method="post" class="form shortner-form">
+    <input type="url" required autofocus name="inputUrl" placeholder="e.g. https://twitter.com" id="input-url" class="shortner-form__input">
+    <div class="shortener-form__section">
+      <input type="checkbox" name="inputCustomUrl" class="shortener-form__custom-url" id="inputCustomUrl">
+      <label for="inputCustomUrl">Need Custom URL?</label>
+    </div>
+    <button #submitUrl (click)="form.classList.toggle('loading');" type="submit" id="submit-url" class="shortener-form__submit">Shorten</button>
   </form>
 
-  <section class="results">
-    <h2>Here's your sweeter link!</h2>
-    <p class="short-link">
-      https://im.ly/1abc51
-    </p>
-    <img class="qr-code" [src]="qrCodeApiLink" alt="">
+  <section class="shortener-results">
+    <div class="col half shortener-results__link">
+      <input class="short-link" type="url" id="inputShortLink" value="https://im.ly/1abc51">
+      <button class="shortener-results__btn-copy" data-clipboard-target="#inputShortLink" #copyButton>
+        Copy Link
+      </button>
+    </div>
+    <div class="col half shortener-results__qr-code">
+      <img class="qr-code" [src]="qrCodeApiLink" alt="">
+    </div>
   </section>
 </div>
-

@@ -2,7 +2,7 @@
 
 :root {
   --input-border-radius: 4px;
-  --bg-app: #eee;
+  --bg-app: #fff;
   --bg-stripe-width: 2;
 }
 
@@ -16,7 +16,7 @@
 body {
   font-family: Apercu, Space Mono, Monaco, Inconsolata, Source Code Pro, monospace;
   background-color: var(--bg-app);
-  background-image: repeating-linear-gradient(45deg, white, white calc(var(--bg-stripe-width) * 1%), transparent calc(var(--bg-stripe-width) * 1%), transparent calc(var(--bg-stripe-width) * 2 * 1%)), repeating-linear-gradient(-45deg, white, white calc(var(--bg-stripe-width) * 1%), transparent calc(var(--bg-stripe-width) * 1%), transparent calc(var(--bg-stripe-width) * 2 * 1%));
+  /*background-image: repeating-linear-gradient(45deg, white, white calc(var(--bg-stripe-width) * 1%), transparent calc(var(--bg-stripe-width) * 1%), transparent calc(var(--bg-stripe-width) * 2 * 1%)), repeating-linear-gradient(-45deg, white, white calc(var(--bg-stripe-width) * 1%), transparent calc(var(--bg-stripe-width) * 1%), transparent calc(var(--bg-stripe-width) * 2 * 1%));*/
   font-size: 20px;
   min-height: 100vh;
   transition: 0.3s;
@@ -27,6 +27,8 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
+  padding: 1rem;
+  background: rgba(0,0,0,0.1);
 }
 
 .form {
@@ -42,4 +44,8 @@ button {
   padding: 1em;
   display: block;
   width: 100%;
+}
+
+.col.half {
+  width: 50%;
 }
